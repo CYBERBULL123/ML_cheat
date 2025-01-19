@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Cheat Sheet for Deep Learning</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- MathJax for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Custom CSS -->
+  <link href="../static/style.css" rel="stylesheet">
+  <script src="../static/script.js"></script>
+</head>
+<body>
+  <body class="dark-mode">
+    <div class="dark-mode-toggle">
+      <button class="toggle-btn" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i> Toggle Theme
+      </button>
+    </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Math Cheat Sheet for Deep Learning</h1>
+    <p>Explore the mathematical foundations of deep learning with detailed explanations and examples.</p>
+  </div>
+
+  <!-- Container -->
+  <div class="container my-5">
+    <!-- Maths Topics -->
+    <h2 class="section-title">Maths Topics</h2>
+    <div class="row">
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('linear-algebra')">
+                <div class="card-body">
+                    <h5 class="card-title">Linear Algebra</h5>
+                    <p class="card-text">Scalars, Vectors, Matrices, Tensors, Matrix Multiplication.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Calculus -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('calculus')">
+                <div class="card-body">
+                    <h5 class="card-title">Calculus</h5>
+                    <p class="card-text">Differentiation, Partial Derivatives, Gradient Descent.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Probability -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('probability')">
+                <div class="card-body">
+                    <h5 class="card-title">Probability</h5>
+                    <p class="card-text">Probability Distributions, Bayes' Theorem, Gaussian Distribution.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Statistics -->
+                <div class="col-md-4">
+                    <div class="card" onclick="openPopup('statistics')">
+                    <div class="card-body">
+                        <h5 class="card-title">Statistics</h5>
+                        <p class="card-text">Mean, Variance, Hypothesis Testing, Correlation, Distributions.</p>
+                    </div>
+                    </div>
+                </div>
+            <!-- Optimization -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('optimization')">
+                <div class="card-body">
+                    <h5 class="card-title">Optimization</h5>
+                    <p class="card-text">Gradient Descent, SGD, Adam Optimizer.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Linear and Logistic Regression -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('regression')">
+                <div class="card-body">
+                    <h5 class="card-title">Linear & Logistic Regression</h5>
+                    <p class="card-text">Linear Regression, Logistic Regression, Sigmoid Function.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Information Theory -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('information-theory')">
+                <div class="card-body">
+                    <h5 class="card-title">Information Theory</h5>
+                    <p class="card-text">Entropy, Cross-Entropy Loss, KL Divergence.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Neural Networks Basics -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('neural-networks')">
+                <div class="card-body">
+                    <h5 class="card-title">Neural Networks Basics</h5>
+                    <p class="card-text">Activation Functions, Loss Functions, Backpropagation.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Fourier Analysis -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('fourier')">
+                <div class="card-body">
+                    <h5 class="card-title">Fourier Analysis</h5>
+                    <p class="card-text">Fourier Transform, Applications in CNNs.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Principal Component Analysis (PCA) -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('pca')">
+                <div class="card-body">
+                    <h5 class="card-title">Principal Component Analysis (PCA)</h5>
+                    <p class="card-text">Dimensionality Reduction, Eigenvalues, Eigenvectors.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Differential Equations -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('differential-equations')">
+                <div class="card-body">
+                    <h5 class="card-title">Differential Equations</h5>
+                    <p class="card-text">Neural ODEs, Solving ODEs Numerically.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Vector Calculus -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('vector-calculus')">
+                <div class="card-body">
+                    <h5 class="card-title">Vector Calculus</h5>
+                    <p class="card-text">Gradient, Divergence, Curl.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Measure Theory -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('measure-theory')">
+                <div class="card-body">
+                    <h5 class="card-title">Measure Theory</h5>
+                    <p class="card-text">Lebesgue Measure, Probability Measures.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Graph Theory -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('graph-theory')">
+                <div class="card-body">
+                    <h5 class="card-title">Graph Theory</h5>
+                    <p class="card-text">Graphs, Adjacency Matrix, Graph Laplacian.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Numerical Methods -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('numerical-methods')">
+                <div class="card-body">
+                    <h5 class="card-title">Numerical Methods</h5>
+                    <p class="card-text">Newton's Method, Euler's Method.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Complex Numbers -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('complex-numbers')">
+                <div class="card-body">
+                    <h5 class="card-title">Complex Numbers</h5>
+                    <p class="card-text">Complex Arithmetic, Magnitude, Phase.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Attention Mechanism -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('attention')">
+                <div class="card-body">
+                    <h5 class="card-title">Attention Mechanism</h5>
+                    <p class="card-text">Self-Attention, Transformers.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Regularization -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('regularization')">
+                <div class="card-body">
+                    <h5 class="card-title">Regularization</h5>
+                    <p class="card-text">L2 Regularization, Dropout.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Manifold Learning -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('manifold-learning')">
+                <div class="card-body">
+                    <h5 class="card-title">Manifold Learning</h5>
+                    <p class="card-text">t-SNE, UMAP.</p>
+                </div>
+                </div>
+            </div>
+            <!-- RNNs and LSTMs -->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('rnns-lstms')">
+                <div class="card-body">
+                    <h5 class="card-title">RNNs and LSTMs</h5>
+                    <p class="card-text">Recurrent Neural Networks, Long Short-Term Memory.</p>
+                </div>
+                </div>
+            </div>
+            <!--Reinforcement Learning-->
+            <div class="col-md-4">
+                <div class="card" onclick="openPopup('reinforcement')">
+                <div class="card-body">
+                    <h5 class="card-title">Reinforcement Learning</h5>
+                    <p class="card-text">Markov Decision Process (MDP) , Q-Learning. </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Popups -->
+  <div id="linear-algebra" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Linear Algebra</h2>
+    <p><strong>Scalars:</strong> Single numbers. <em>Example:</em> Learning rate \( \alpha = 0.01 \).</p>
+    <p><strong>Vectors:</strong> Ordered lists of numbers. <em>Example:</em> \( \mathbf{X} = \begin{bmatrix} 1 & 2 & 3 \end{bmatrix} \) (RGB pixel).</p>
+    <p><strong>Matrices:</strong> 2D grids of numbers. <em>Example:</em> \( \mathbf{W} = \begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \) (neural network weights).</p>
+    <p><strong>Tensors:</strong> Multi-dimensional arrays. <em>Example:</em> 3D tensor for RGB images (height × width × channels).</p>
+    <p><strong>Matrix Multiplication:</strong> Combines two matrices. <em>Example:</em></p>
+    <p>\[
+      \mathbf{A} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad
+      \mathbf{B} = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+    \]</p>
+    <p>\[
+      \mathbf{AB} = \begin{bmatrix}
+        (1 \cdot 5 + 2 \cdot 7) & (1 \cdot 6 + 2 \cdot 8) \\
+        (3 \cdot 5 + 4 \cdot 7) & (3 \cdot 6 + 4 \cdot 8)
+      \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
+    \]</p>
+  </div>
+  
+  <div id="calculus" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Calculus</h2>
+    <p><strong>Differentiation:</strong> Differentiation is a way to measure how a function changes as its input changes. In deep learning, it is used to compute gradients, which tell us how to adjust the model's parameters to reduce errors.</p>
+    <p><strong>Example:</strong> If the loss function is \( L(w) = w^2 \), the gradient is \( \frac{dL(w)}{dw} = 2w \). This tells us how much to change \( w \) to minimize the loss.</p>
+    <p><strong>Partial Derivatives:</strong> When a function depends on multiple variables, partial derivatives measure how the function changes with respect to each variable.</p>
+    <p><strong>Example:</strong> If \( L(w_1, w_2) = w_1^2 + w_2^2 \), the partial derivatives are \( \frac{\partial L}{\partial w_1} = 2w_1 \) and \( \frac{\partial L}{\partial w_2} = 2w_2 \).</p>
+    <p><strong>Gradient Descent:</strong> This is an optimization algorithm that uses gradients to minimize the loss function. It updates the model's parameters in small steps to find the best values.</p>
+    <p><strong>Example:</strong> If the current weight is \( w = 2 \) and the learning rate is \( \eta = 0.1 \), the update rule is:</p>
+    <p>\[ w_{\text{new}} = w_{\text{old}} - \eta \cdot \frac{dL(w)}{dw} = 2 - 0.1 \cdot 4 = 1.6 \]</p>
+  </div>
+  
+  <div id="probability" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Probability</h2>
+    <p><strong>Probability Distributions:</strong> A probability distribution describes how likely different outcomes are. The Gaussian (Normal) distribution is commonly used to model real-world data.</p>
+    <p><strong>Gaussian Distribution:</strong> A bell-shaped curve that describes the distribution of many natural phenomena. It is defined as:</p>
+    <p>\[
+        P(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}
+    \]</p>
+    <p>Here, \( \mu \) is the mean (average), and \( \sigma \) is the standard deviation (spread).</p>
+    <p><strong>Example:</strong> If \( \mu = 0 \) and \( \sigma = 1 \), the distribution is called the <strong>standard normal distribution</strong>.</p>
+    <p><strong>Bayes' Theorem:</strong> This theorem helps us update our beliefs based on new evidence. It is widely used in machine learning for classification tasks.</p>
+    <p><strong>Example:</strong> If the probability of rain (\( A \)) is 30%, and the probability of clouds given rain (\( B|A \)) is 60%, then the probability of rain given clouds (\( A|B \)) is:</p>
+    <p>\[
+        P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{0.6 \cdot 0.3}{0.5} = 0.36
+    \]</p>
+  </div>
+
+  <div id="statistics" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Statistics</h2>
+    <p><strong>Mean:</strong> Average of a dataset \( X = \{x_1, x_2, \dots, x_n\} \):</p>
+    <p>\[
+      \mu = \frac{1}{n} \sum_{i=1}^n x_i
+    \]</p>
+    <p><strong>Variance:</strong> Measures spread:</p>
+    <p>\[
+      \sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2
+    \]</p>
+    <p><strong>Standard Deviation:</strong> \( \sigma = \sqrt{\sigma^2} \).</p>
+
+    <p><strong>Probability Distributions:</strong></p>
+    <ul>
+        <li><strong>Normal Distribution:</strong> \( \mathcal{N}(\mu, \sigma^2) \):</li>
+        <p>\[
+          f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+        \]</p>
+        <li><strong>Binomial Distribution:</strong> \( \text{Binomial}(n, p) \):</li>
+        <p>\[
+          P(k) = \binom{n}{k} p^k (1-p)^{n-k}
+        \]</p>
+    </ul>
+
+    <p><strong>Hypothesis Testing:</strong></p>
+    <ul>
+        <li><strong>Null Hypothesis (\( H_0 \)):</strong> Assumes no effect.</li>
+        <li><strong>Alternative Hypothesis (\( H_1 \)):</strong> Assumes an effect.</li>
+        <li><strong>p-value:</strong> Probability of observing data as extreme as the test statistic under \( H_0 \).</li>
+    </ul>
+
+    <p><strong>Correlation:</strong> Measures linear relationship between \( X \) and \( Y \):</p>
+    <p>\[
+      r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}
+    \]</p>
+    <p><strong>Applications:</strong> Data analysis, inference, and decision-making.</p>
+ </div>
+  
+ <div id="optimization" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Optimization</h2>
+    <p><strong>Gradient Descent:</strong> Adjusts model parameters to minimize the loss function. <em>Example:</em> For \( L(w) = w^2 \), the update rule is:</p>
+    <p>\[
+      w_{\text{new}} = w_{\text{old}} - \eta \cdot \frac{dL(w)}{dw} = w_{\text{old}} - \eta \cdot 2w
+    \]</p>
+    <p>If \( w = 2 \) and \( \eta = 0.1 \), then \( w_{\text{new}} = 2 - 0.1 \cdot 4 = 1.6 \).</p>
+  
+    <p><strong>Stochastic Gradient Descent (SGD):</strong> Uses mini-batches for faster updates. <em>Example:</em> For a mini-batch loss \( L(w) = \frac{1}{2}(y - wx)^2 \), the gradient is:</p>
+    <p>\[
+      \frac{dL(w)}{dw} = -x(y - wx)
+    \]</p>
+    <p>If \( x = 1 \), \( y = 3 \), and \( w = 2 \), then \( \frac{dL(w)}{dw} = -1(3 - 2 \cdot 1) = -1 \). Update: \( w_{\text{new}} = 2 - 0.1 \cdot (-1) = 2.1 \).</p>
+  
+    <p><strong>Adam Optimizer:</strong> Combines momentum and adaptive learning rates. <em>Example:</em> For \( L(w) = w^2 \), Adam updates parameters as:</p>
+    <p>\[
+      m_t = \beta_1 m_{t-1} + (1 - \beta_1) \nabla L(w_t) = 0.9 \cdot 0 + 0.1 \cdot 2w
+    \]</p>
+    <p>\[
+      v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla L(w_t))^2 = 0.999 \cdot 0 + 0.001 \cdot (2w)^2
+    \]</p>
+    <p>\[
+      w_t \leftarrow w_t - \eta \frac{m_t}{\sqrt{v_t} + \epsilon}
+    \]</p>
+    <p>If \( w = 2 \), \( \eta = 0.1 \), \( \beta_1 = 0.9 \), \( \beta_2 = 0.999 \), and \( \epsilon = 10^{-8} \), then:</p>
+    <p>\[
+      m_t = 0.1 \cdot 4 = 0.4, \quad v_t = 0.001 \cdot 16 = 0.016
+    \]</p>
+    <p>\[
+      w_{\text{new}} = 2 - 0.1 \cdot \frac{0.4}{\sqrt{0.016} + 10^{-8}} \approx 2 - 0.1 \cdot 3.16 = 1.684
+    \]</p>
+  </div>
+  
+  <div id="regression" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Linear & Logistic Regression</h2>
+    <p><strong>Linear Regression:</strong> Predicts continuous values using a linear relationship. <em>Example:</em> For house price prediction:</p>
+    <p>\[
+      y = wx + b
+    \]</p>
+    <p>If \( w = 2 \), \( b = 1 \), and \( x = 3 \) (house size in 1000 sq. ft.), then:</p>
+    <p>\[
+      y = 2 \cdot 3 + 1 = 7 \quad (\text{Price} = \$700,000)
+    \]</p>
+  
+    <p><strong>Logistic Regression:</strong> Predicts binary outcomes using the sigmoid function. <em>Example:</em> For spam detection:</p>
+    <p>\[
+      \sigma(z) = \frac{1}{1 + e^{-z}}
+    \]</p>
+    <p>If \( z = 0.5 \), then:</p>
+    <p>\[
+      \sigma(0.5) = \frac{1}{1 + e^{-0.5}} \approx 0.622
+    \]</p>
+    <p>This means there is a <strong>62.2% chance</strong> the email is spam.</p>
+  </div>
+  
+  <div id="information-theory" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Information Theory</h2>
+    <p><strong>Entropy:</strong> Measures the uncertainty or randomness of a system. <em>Example:</em> For a binary classification problem:</p>
+    <p>\[
+      H(X) = -p \log_2 p - (1-p) \log_2 (1-p)
+    \]</p>
+    <p>If \( p = 0.5 \), then:</p>
+    <p>\[
+      H(X) = -0.5 \log_2 0.5 - 0.5 \log_2 0.5 = 1 \quad \text{(1 bit of uncertainty)}
+    \]</p>
+  
+    <p><strong>Cross-Entropy Loss:</strong> Measures the difference between the true and predicted probability distributions. <em>Example:</em> For true distribution \( P = [0.1, 0.9] \) and predicted distribution \( Q = [0.3, 0.7] \):</p>
+    <p>\[
+      H(P, Q) = - \sum P(x) \log Q(x) = - (0.1 \log_2 0.3 + 0.9 \log_2 0.7)
+    \]</p>
+    <p>Calculating:</p>
+    <p>\[
+      H(P, Q) \approx - (0.1 \cdot -1.737 + 0.9 \cdot -0.515) \approx 0.61 \quad \text{(bits)}
+    \]</p>
+  
+    <p><strong>KL Divergence:</strong> Measures how one probability distribution diverges from another. <em>Example:</em> For distributions \( P = [0.1, 0.9] \) and \( Q = [0.3, 0.7] \):</p>
+    <p>\[
+      D_{KL}(P \parallel Q) = \sum P(x) \log \frac{P(x)}{Q(x)}
+    \]</p>
+    <p>Calculating:</p>
+    <p>\[
+    D_{KL}(P \parallel Q) = 0.1 \log_2 \frac{0.1}{0.3} + 0.9 \log_2 \frac{0.9}{0.7}
+    \]</p>
+    <p>\[
+    \approx 0.1 \cdot (-1.737) + 0.9 \cdot 0.362
+    \]</p>
+    <p>\[
+    \approx -0.1737 + 0.3258 \approx 0.15 \, \text{(bits)}
+    \]</p>
+  </div>
+  
+  <div id="neural-networks" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Neural Networks Basics</h2>
+    <p><strong>Activation Functions:</strong> Introduce non-linearity to learn complex patterns. <em>Example:</em> ReLU (Rectified Linear Unit):</p>
+    <p>\[
+      f(x) = \max(0, x)
+    \]</p>
+    <p>If \( x = -1 \), then \( f(x) = 0 \); if \( x = 2 \), then \( f(x) = 2 \).</p>
+  
+    <p><strong>Loss Functions:</strong> Measure the difference between predictions and true values. <em>Example:</em> Mean Squared Error (MSE) for regression:</p>
+    <p>\[
+      \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+    \]</p>
+    <p>If true values are \( [1, 2] \) and predictions are \( [1.1, 1.9] \), then:</p>
+    <p>\[
+      \text{MSE} = \frac{1}{2} \left( (1 - 1.1)^2 + (2 - 1.9)^2 \right) = 0.005
+    \]</p>
+  
+    <p><strong>Backpropagation:</strong> Computes gradients and updates model parameters to minimize loss. <em>Example:</em> For a simple network with one layer:</p>
+    <p>\[
+      \frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w}
+    \]</p>
+    <p>If \( L = (y - \hat{y})^2 \), \( \hat{y} = wx + b \), and \( \frac{\partial L}{\partial \hat{y}} = -2(y - \hat{y}) \), then:</p>
+    <p>\[
+      \frac{\partial L}{\partial w} = -2(y - \hat{y}) \cdot x
+    \]</p>
+    <p>If \( y = 1 \), \( \hat{y} = 0.8 \), and \( x = 2 \), then:</p>
+    <p>\[
+      \frac{\partial L}{\partial w} = -2(1 - 0.8) \cdot 2 = -0.8
+    \]</p>
+    <p>Update: \( w_{\text{new}} = w_{\text{old}} - \eta \cdot \frac{\partial L}{\partial w} \).</p>
+  </div>
+  
+  <div id="fourier" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Fourier Analysis</h2>
+    <p><strong>Fourier Transform:</strong> Decomposes a signal into its frequency components. <em>Example:</em> For a simple cosine wave \( f(t) = \cos(2 \pi t) \):</p>
+    <p>\[
+      F(\omega) = \int_{-\infty}^{\infty} \cos(2 \pi t) e^{-i \omega t} dt
+    \]</p>
+    <p>The Fourier Transform of \( \cos(2 \pi t) \) results in two delta functions at \( \omega = \pm 2 \pi \), representing the frequency components.</p>
+  
+    <p><strong>Discrete Fourier Transform (DFT):</strong> Used for analyzing discrete signals. <em>Example:</em> For a discrete signal \( x = [1, 0, -1, 0] \):</p>
+    <p>\[
+      X[k] = \sum_{n=0}^{N-1} x[n] e^{-i \frac{2 \pi}{N} kn}
+    \]</p>
+    <p>For \( N = 4 \), the DFT of \( x \) is:</p>
+    <p>\[
+      X = [0, 2, 0, 2]
+    \]</p>
+  
+    <p><strong>Application in CNNs:</strong> The Fourier Transform speeds up convolutions by converting them into multiplications in the frequency domain. <em>Example:</em> Convolving a signal \( f(t) \) with a kernel \( g(t) \) is equivalent to multiplying their Fourier Transforms \( F(\omega) \) and \( G(\omega) \).</p>
+  </div>
+  
+  <div id="pca" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>PCA</h2>
+    <p><strong>Dimensionality Reduction:</strong> PCA reduces the number of features while preserving the most important information (variance). <em>Example:</em> For a dataset with 3 features (e.g., height, weight, age), PCA can reduce it to 2 principal components.</p>
+    <p><strong>Eigenvalues and Eigenvectors:</strong> PCA finds the directions (eigenvectors) and magnitudes (eigenvalues) of maximum variance. <em>Example:</em> For a 2D dataset:</p>
+    <p>\[
+      \text{Covariance Matrix} = \begin{bmatrix} 1 & 0.8 \\ 0.8 & 1 \end{bmatrix}
+    \]</p>
+    <p>The eigenvectors \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \) represent the principal components, and the eigenvalues \( \lambda_1 \) and \( \lambda_2 \) represent their importance.</p>
+    <p><strong>Example Calculation:</strong> If \( \mathbf{v}_1 = \begin{bmatrix} 0.707 \\ 0.707 \end{bmatrix} \) and \( \lambda_1 = 1.8 \), the first principal component explains 90% of the variance.</p>
+    <p><strong>Application:</strong> PCA is used for visualization (e.g., reducing 3D data to 2D), noise reduction, and speeding up machine learning algorithms.</p>
+  </div>
+
+  <div id="differential-equations" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Differential Equations</h2>
+    <p><strong>Neural ODEs:</strong> Neural Ordinary Differential Equations (ODEs) model continuous-time dynamics using differential equations. <em>Example:</em> A neural ODE is defined as:</p>
+    <p>\[
+      \frac{d}{dt} h(t) = f(h(t), t, \theta)
+    \]</p>
+    <p>Here, \( h(t) \) is the hidden state, \( f \) is a neural network, and \( \theta \) are the parameters.</p>
+    <p><strong>Example:</strong> For \( \frac{dh}{dt} = -2h \) and \( h(0) = 1 \), the solution is:</p>
+    <p>\[
+      h(t) = e^{-2t}
+    \]</p>
+    <p>At \( t = 1 \), \( h(1) = e^{-2} \approx 0.135 \).</p>
+    <p><strong>Solving ODEs Numerically:</strong> Euler's method approximates solutions. <em>Example:</em> For \( \frac{dh}{dt} = -2h \) and \( h(0) = 1 \):</p>
+    <p>\[
+      h(t+dt) = h(t) + (-2h(t)) \cdot dt
+    \]</p>
+    <p>If \( dt = 0.1 \), then:</p>
+    <p>\[
+      h(0.1) = 1 + (-2 \cdot 1) \cdot 0.1 = 0.8
+    \]</p>
+    <p>\[
+      h(0.2) = 0.8 + (-2 \cdot 0.8) \cdot 0.1 = 0.64
+    \]</p>
+    <p><strong>Application:</strong> Neural ODEs are used in time-series modeling, control systems, and physics-informed neural networks.</p>
+  </div>
+  
+  <div id="vector-calculus" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Vector Calculus</h2>
+    <p><strong>Gradient:</strong> The gradient of a function is a vector that points in the direction of the steepest increase. <em>Example:</em> For \( f(x, y) = x^2 + y^2 \):</p>
+    <p>\[
+      \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) = (2x, 2y)
+    \]</p>
+    <p>At \( (x, y) = (1, 2) \), \( \nabla f = (2, 4) \).</p>
+  
+    <p><strong>Divergence:</strong> Measures how much a vector field spreads out from a point. <em>Example:</em> For \( \mathbf{F} = (x, y, z) \):</p>
+    <p>\[
+      \nabla \cdot \mathbf{F} = \frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z} = 3
+    \]</p>
+    <p>This means the field spreads uniformly in all directions.</p>
+  
+    <p><strong>Curl:</strong> Measures the rotation of a vector field. <em>Example:</em> For \( \mathbf{F} = (-y, x, 0) \):</p>
+    <p>\[
+      \nabla \times \mathbf{F} = (0, 0, 2)
+    \]</p>
+    <p>This indicates a counterclockwise rotation around the z-axis.</p>
+  </div>
+  
+  <div id="measure-theory" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Measure Theory</h2>
+    <p><strong>Lebesgue Measure:</strong> Generalizes length, area, and volume to complex sets. <em>Example:</em> The Lebesgue measure of an interval \( [a, b] \) is \( b - a \).</p>
+    <p><strong>Example:</strong> For \( [2, 5] \), the measure is \( 5 - 2 = 3 \).</p>
+  
+    <p><strong>Probability Measures:</strong> Assign probabilities to events in a sample space. <em>Example:</em> For a Gaussian distribution with mean \( \mu = 0 \) and variance \( \sigma^2 = 1 \):</p>
+    <p>\[
+      P(X \leq 1) = \int_{-\infty}^1 \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} dx \approx 0.8413
+    \]</p>
+    <p>This gives the probability that \( X \) is less than or equal to 1.</p>
+  </div>
+  
+  <div id="graph-theory" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Graph Theory</h2>
+    <p><strong>Graphs:</strong> A graph is a collection of nodes (vertices) connected by edges. <em>Example:</em> A social network where each person is a node, and each friendship is an edge.</p>
+    <p><strong>Adjacency Matrix:</strong> Represents connections between nodes. <em>Example:</em> For a graph with nodes \( A, B, C \):</p>
+    <p>\[
+      A = \begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}
+    \]</p>
+    <p>Here, \( A \) is connected to \( B \), and \( B \) is connected to \( C \).</p>
+  
+    <p><strong>Graph Laplacian:</strong> Captures the structure of a graph. <em>Example:</em> For the same graph:</p>
+    <p>\[
+      D = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
+      L = D - A = \begin{bmatrix} 1 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1 \end{bmatrix}
+    \]</p>
+    <p>Here, \( D \) is the degree matrix, and \( L \) is the graph Laplacian.</p>
+  </div>
+  
+  <div id="numerical-methods" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Numerical Methods</h2>
+    <p><strong>Newton's Method:</strong> An iterative algorithm to find the roots of a function. It uses the function and its derivative to approximate the root.</p>
+    <p><strong>Example:</strong> For \( f(x) = x^2 - 2 \):</p>
+    <p>\[
+      x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} = x_n - \frac{x_n^2 - 2}{2x_n}
+    \]</p>
+    <p>Starting from \( x_0 = 1 \):</p>
+    <p>\[
+      x_1 = 1 - \frac{1^2 - 2}{2 \cdot 1} = 1.5
+    \]</p>
+    <p>\[
+      x_2 = 1.5 - \frac{1.5^2 - 2}{2 \cdot 1.5} \approx 1.4167
+    \]</p>
+    <p>This converges to \( \sqrt{2} \approx 1.4142 \).</p>
+  
+    <p><strong>Euler's Method:</strong> A numerical technique to solve ordinary differential equations (ODEs) by approximating the solution step-by-step.</p>
+    <p><strong>Example:</strong> For \( \frac{dy}{dx} = -2y \) and \( y(0) = 1 \):</p>
+    <p>\[
+      y_{n+1} = y_n + h \cdot f(x_n, y_n) = y_n + h \cdot (-2y_n)
+    \]</p>
+    <p>With \( h = 0.1 \):</p>
+    <p>\[
+      y_1 = 1 + 0.1 \cdot (-2 \cdot 1) = 0.8
+    \]</p>
+    <p>\[
+      y_2 = 0.8 + 0.1 \cdot (-2 \cdot 0.8) = 0.64
+    \]</p>
+    <p>This approximates the solution \( y(x) = e^{-2x} \).</p>
+  </div>
+  
+  <div id="complex-numbers" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Complex Numbers</h2>
+    <p><strong>Complex Arithmetic:</strong> Numbers of the form \( z = a + bi \), where \( a \) is the real part, \( b \) is the imaginary part, and \( i \) is the imaginary unit (\( i^2 = -1 \)).</p>
+    <p><strong>Example:</strong> For \( z = 3 + 4i \):</p>
+    <p>\[
+      \text{Real part} = 3, \quad \text{Imaginary part} = 4
+    \]</p>
+  
+    <p><strong>Magnitude:</strong> The magnitude (or absolute value) of a complex number \( z = a + bi \) is:</p>
+    <p>\[
+      |z| = \sqrt{a^2 + b^2}
+    \]</p>
+    <p><strong>Example:</strong> For \( z = 3 + 4i \):</p>
+    <p>\[
+      |z| = \sqrt{3^2 + 4^2} = 5
+    \]</p>
+  
+    <p><strong>Phase:</strong> The phase (or angle) of a complex number \( z = a + bi \) is:</p>
+    <p>\[
+      \theta = \tan^{-1}\left(\frac{b}{a}\right)
+    \]</p>
+    <p><strong>Example:</strong> For \( z = 3 + 4i \):</p>
+    <p>\[
+      \theta = \tan^{-1}\left(\frac{4}{3}\right) \approx 53.13^\circ
+    \]</p>
+  </div>
+  
+  <div id="attention" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Attention Mechanism & Convolutional Neural Networks (CNNs)</h2>
+    <p><strong>Self-Attention:</strong> Computes attention scores for input sequences:</p>
+    <p>\[
+      \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+    \]</p>
+    <p>Where \( Q \), \( K \), and \( V \) are query, key, and value matrices, and \( d_k \) is dimensionality.</p>
+    <p><strong>Transformers:</strong> Use self-attention for tasks like machine translation and text summarization.</p>
+
+    <p><strong>Convolution:</strong> Extracts features using filters \( W \):</p>
+    <p>\[
+      (X * W)_{i,j} = \sum_{m,n} X_{i+m, j+n} \cdot W_{m,n}
+    \]</p>
+    <p><strong>Pooling:</strong> Reduces dimensionality (e.g., max pooling):</p>
+    <p>\[
+      \text{MaxPool}(X)_{i,j} = \max_{m,n \in [0,k)} X_{i \cdot k + m, j \cdot k + n}
+    \]</p>
+    <p><strong>Activation:</strong> Introduces non-linearity (e.g., ReLU):</p>
+    <p>\[
+      \text{ReLU}(x) = \max(0, x)
+    \]</p>
+    <p><strong>Output:</strong> Fully connected layers with softmax for classification:</p>
+    <p>\[
+      \text{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}
+    \]</p>
+    <p><strong>Applications:</strong> Image classification, object detection, segmentation.</p>
+  </div>
+  
+  <div id="regularization" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Regularization</h2>
+    <p><strong>L1 Regularization:</strong> Adds a penalty proportional to the absolute value of weights. Encourages sparsity. <em>Example:</em> For \( w = [1, -2, 3] \), penalty = \( |1| + |-2| + |3| = 6 \).</p>
+  
+    <p><strong>L2 Regularization:</strong> Adds a penalty proportional to the square of weights. Prevents large weights. <em>Example:</em> For \( w = [1, -2, 3] \), penalty = \( 1^2 + (-2)^2 + 3^2 = 14 \).</p>
+  
+    <p><strong>Elastic Net:</strong> Combines L1 and L2 regularization. Balances sparsity and weight shrinkage. <em>Example:</em> For \( w = [1, -2, 3] \), penalty = \( 0.1 \cdot 6 + 0.2 \cdot 14 = 3.4 \).</p>
+  
+    <p><strong>Dropout:</strong> Randomly sets neurons to zero during training. Reduces overfitting. <em>Example:</em> For activations \( [1, 0.5, 0.2] \), dropout (rate 0.5) might result in \( [1, 0, 0] \).</p>
+  
+    <p><strong>Early Stopping:</strong> Stops training when validation error increases. Prevents overfitting. <em>Example:</em> Training stops if validation error doesn’t improve for 10 epochs.</p>
+  
+    <p><strong>Data Augmentation:</strong> Increases dataset size by applying transformations. Reduces overfitting. <em>Example:</em> Flipping or rotating images creates new training samples.</p>
+  </div>
+  
+  <div id="manifold-learning" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Manifold Learning</h2>
+    <p><strong>t-SNE:</strong> A technique for visualizing high-dimensional data in 2D or 3D while preserving local structure. It is widely used for exploring clusters in data.</p>
+    <p><strong>Example:</strong> For the MNIST dataset (28x28 pixel images of digits), t-SNE reduces the 784-dimensional data to 2D, revealing clusters of similar digits.</p>
+    <p><strong>How it works:</strong> t-SNE minimizes the divergence between two distributions: one measuring pairwise similarities in high-dimensional space, and the other in low-dimensional space.</p>
+  
+    <p><strong>UMAP:</strong> A faster and more scalable alternative to t-SNE. It preserves both local and global structure, making it suitable for large datasets.</p>
+    <p><strong>Example:</strong> For a dataset of 10,000 gene expressions, UMAP reduces the data to 2D, revealing patterns and groupings that are hard to see in high dimensions.</p>
+    <p><strong>How it works:</strong> UMAP constructs a graph in high-dimensional space and optimizes a low-dimensional layout to preserve the graph's structure.</p>
+  </div>
+  
+  <div id="rnns-lstms" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>RNNs and LSTMs</h2>
+    <p><strong>Recurrent Neural Networks (RNNs):</strong> RNNs are designed to handle sequential data, such as time series or text. They maintain a hidden state that captures information from previous time steps.</p>
+    <p><strong>Example:</strong> For the sentence "I love deep learning," an RNN processes each word sequentially:</p>
+    <p>\[
+      h_t = \tanh(W_h h_{t-1} + W_x x_t + b)
+    \]</p>
+    <p>Here, \( h_t \) is the hidden state at time \( t \), \( x_t \) is the input (e.g., a word), and \( W_h \), \( W_x \), and \( b \) are parameters.</p>
+    <p><strong>Application:</strong> RNNs are used in tasks like text generation, machine translation, and time-series prediction.</p>
+  
+    <p><strong>Long Short-Term Memory (LSTM):</strong> LSTMs are a type of RNN that solve the vanishing gradient problem. They use gates to control the flow of information.</p>
+    <p><strong>Example:</strong> The forget gate in an LSTM is computed as:</p>
+    <p>\[
+      f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
+    \]</p>
+    <p>Here, \( \sigma \) is the sigmoid function, \( W_f \) is the weight matrix, and \( b_f \) is the bias. The forget gate decides what information to discard from the cell state.</p>
+    <p><strong>Application:</strong> LSTMs are used in tasks like speech recognition, sentiment analysis, and video analysis.</p>
+  </div>
+
+  <div id="reinforcement" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Reinforcement Learning</h2>
+    <p><strong>Markov Decision Process (MDP):</strong> A framework for modeling decision-making in environments with states \( S \), actions \( A \), rewards \( R \), and transition probabilities \( P \). Defined by the tuple \( (S, A, P, R, \gamma) \), where:</p>
+    <ul>
+        <li>\( P(s' | s, a) \): Probability of transitioning to state \( s' \) from state \( s \) after taking action \( a \).</li>
+        <li>\( R(s, a) \): Immediate reward for taking action \( a \) in state \( s \).</li>
+        <li>\( \gamma \in [0, 1] \): Discount factor for future rewards.</li>
+    </ul>
+    <p><strong>Objective:</strong> Find a policy \( \pi(a | s) \) that maximizes the expected cumulative reward:</p>
+    <p>\[
+      V^\pi(s) = \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s, \pi \right]
+    \]</p>
+
+    <h3>Q-Learning</h3>
+    <p><strong>Q-Value:</strong> Represents the expected cumulative reward for taking action \( a \) in state \( s \) and following policy \( \pi \) thereafter:</p>
+    <p>\[
+      Q^\pi(s, a) = \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s, a_0 = a, \pi \right]
+    \]</p>
+    <p><strong>Optimal Q-Value:</strong> Found using the Bellman equation:</p>
+    <p>\[
+      Q^*(s, a) = R(s, a) + \gamma \sum_{s'} P(s' | s, a) \max_{a'} Q^*(s', a')
+    \]</p>
+    <p><strong>Q-Learning Update Rule:</strong> Iteratively update \( Q(s, a) \) using:</p>
+    <p>\[
+      Q(s, a) \leftarrow Q(s, a) + \alpha \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+    \]</p>
+    <p>Where \( \alpha \) is the learning rate.</p>
+    <p><strong>Applications:</strong> Game playing (e.g., AlphaGo), robotics, and autonomous systems.</p>
+  </div>
+
+  <!-- Back to Main Page -->
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <a href="../home.html" class="btn btn-primary">Back to Main Page</a>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" onclick="closePopup()"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Created by <a href="#">Aditya Pandey</a> | &copy; 2025</p>
+  </div>
+</body>
+</html>

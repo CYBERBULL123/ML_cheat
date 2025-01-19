@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Learning Models Cheat Sheet</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <!-- Custom CSS -->
+  <link href="../static/style.css" rel="stylesheet">
+  <!-- Custom JS -->
+  <script src="../static/charts.js"></script>
+  <script src="../static/script.js"></script>
+</head>
+<body class="dark-mode">
+  <div class="dark-mode-toggle">
+    <button class="toggle-btn" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i> Toggle Theme
+    </button>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Deep Learning Models Cheat Sheet</h1>
+    <p>A comprehensive guide to deep learning models, from basic to advanced.</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Section: Feedforward Neural Networks -->
+    <h2 class="section-title">Feedforward Neural Networks (FNN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">FNN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> The simplest type of neural network where information moves in one direction—from input to output.
+              <br>
+              <strong>Architecture:</strong> Input layer → Hidden layers → Output layer.
+              <br>
+              <strong>Workflow:</strong> Data flows forward through the network without cycles or loops.
+              <br>
+              <strong>Use Cases:</strong> Classification, regression.
+              <br>
+              <strong>Example:</strong> Predicting house prices based on features like size, location, and number of rooms.
+            </p>
+            <canvas id="fnnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Convolutional Neural Networks -->
+    <h2 class="section-title">Convolutional Neural Networks (CNN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">CNN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> CNNs are designed for image processing and use convolutional layers to extract features.
+              <br>
+              <strong>Architecture:</strong> Input → Convolutional layers → Pooling layers → Fully connected layers → Output.
+              <br>
+              <strong>Workflow:</strong> Convolutional layers detect patterns (e.g., edges, textures), pooling layers reduce dimensionality, and fully connected layers classify the image.
+              <br>
+              <strong>Use Cases:</strong> Image classification, object detection.
+              <br>
+              <strong>Example:</strong> Identifying objects in photos (e.g., cats, dogs, cars).
+            </p>
+            <canvas id="cnnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Recurrent Neural Networks -->
+    <h2 class="section-title">Recurrent Neural Networks (RNN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">RNN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> RNNs are designed for sequential data and have connections that form directed cycles.
+              <br>
+              <strong>Architecture:</strong> Input → Recurrent layers → Output.
+              <br>
+              <strong>Workflow:</strong> Processes sequences step-by-step, maintaining a hidden state to remember previous inputs.
+              <br>
+              <strong>Use Cases:</strong> Time series prediction, natural language processing.
+              <br>
+              <strong>Example:</strong> Predicting the next word in a sentence.
+            </p>
+            <canvas id="rnnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Long Short-Term Memory (LSTM) -->
+    <h2 class="section-title">Long Short-Term Memory (LSTM)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">LSTM Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> LSTMs are a type of RNN that can learn long-term dependencies.
+              <br>
+              <strong>Architecture:</strong> Input → LSTM cells → Output.
+              <br>
+              <strong>Workflow:</strong> Uses gates (input, forget, output) to control the flow of information and remember long-term dependencies.
+              <br>
+              <strong>Use Cases:</strong> Speech recognition, text generation.
+              <br>
+              <strong>Example:</strong> Generating text in a specific style (e.g., Shakespearean plays).
+            </p>
+            <canvas id="lstmChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Gated Recurrent Units (GRU) -->
+    <h2 class="section-title">Gated Recurrent Units (GRU)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GRU Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> GRUs are a simplified version of LSTMs with fewer parameters.
+              <br>
+              <strong>Architecture:</strong> Input → GRU cells → Output.
+              <br>
+              <strong>Workflow:</strong> Uses update and reset gates to control the flow of information.
+              <br>
+              <strong>Use Cases:</strong> Sequence modeling, machine translation.
+              <br>
+              <strong>Example:</strong> Translating text from one language to another.
+            </p>
+            <canvas id="gruChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Transformers -->
+    <h2 class="section-title">Transformers</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Transformer Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> Transformers use self-attention mechanisms to process input sequences in parallel.
+              <br>
+              <strong>Architecture:</strong> Input → Encoder (Self-Attention + Feedforward) → Decoder (Self-Attention + Encoder-Decoder Attention + Feedforward) → Output.
+              <br>
+              <strong>Workflow:</strong> Self-attention mechanisms weigh the importance of different words in a sequence.
+              <br>
+              <strong>Use Cases:</strong> NLP tasks like translation, text generation.
+              <br>
+              <strong>Example:</strong> Generating human-like text (e.g., GPT models).
+            </p>
+            <canvas id="transformerChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Generative Adversarial Networks (GAN) -->
+    <h2 class="section-title">Generative Adversarial Networks (GAN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GAN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> GANs consist of two networks—a generator and a discriminator—that compete against each other.
+              <br>
+              <strong>Architecture:</strong> Generator → Discriminator → Feedback loop.
+              <br>
+              <strong>Workflow:</strong> The generator creates fake data, and the discriminator tries to distinguish between real and fake data.
+              <br>
+              <strong>Use Cases:</strong> Image generation, data augmentation.
+              <br>
+              <strong>Example:</strong> Generating realistic human faces.
+            </p>
+            <canvas id="ganChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Autoencoders -->
+    <h2 class="section-title">Autoencoders</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Autoencoder Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> Autoencoders are used for unsupervised learning and dimensionality reduction.
+              <br>
+              <strong>Architecture:</strong> Input → Encoder → Latent space → Decoder → Output.
+              <br>
+              <strong>Workflow:</strong> The encoder compresses the input into a latent representation, and the decoder reconstructs the input from the latent representation.
+              <br>
+              <strong>Use Cases:</strong> Anomaly detection, feature learning.
+              <br>
+              <strong>Example:</strong> Detecting fraudulent transactions.
+            </p>
+            <canvas id="autoencoderChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: U-Net -->
+    <h2 class="section-title">U-Net</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">U-Net Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> U-Net is a convolutional network architecture for biomedical image segmentation.
+              <br>
+              <strong>Architecture:</strong> Encoder → Decoder with skip connections.
+              <br>
+              <strong>Workflow:</strong> The encoder extracts features, and the decoder reconstructs the image with skip connections for precise localization.
+              <br>
+              <strong>Use Cases:</strong> Medical image segmentation.
+              <br>
+              <strong>Example:</strong> Segmenting tumors in MRI scans.
+            </p>
+            <canvas id="unetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: YOLO (You Only Look Once) -->
+    <h2 class="section-title">YOLO (You Only Look Once)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">YOLO Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> YOLO is a real-time object detection system.
+              <br>
+              <strong>Architecture:</strong> Single convolutional network for object detection.
+              <br>
+              <strong>Workflow:</strong> Divides the image into a grid and predicts bounding boxes and class probabilities for each grid cell.
+              <br>
+              <strong>Use Cases:</strong> Real-time object detection.
+              <br>
+              <strong>Example:</strong> Detecting pedestrians in self-driving cars.
+            </p>
+            <canvas id="yoloChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Radial Basis Function Networks (RBFN) -->
+    <h2 class="section-title">Radial Basis Function Networks (RBFN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">RBFN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A type of neural network that uses radial basis functions as activation functions.
+              <br>
+              <strong>Architecture:</strong> Input layer → Hidden layer (RBF neurons) → Output layer.
+              <br>
+              <strong>Use Cases:</strong> Function approximation, time series prediction, classification.
+              <br>
+              <strong>Example:</strong> Predicting stock prices.
+            </p>
+            <canvas id="rbfnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Self-Organizing Maps (SOM) -->
+    <h2 class="section-title">Self-Organizing Maps (SOM)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SOM Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> An unsupervised learning model used for dimensionality reduction and visualization.
+              <br>
+              <strong>Architecture:</strong> Input layer → 2D grid of neurons.
+              <br>
+              <strong>Use Cases:</strong> Clustering, data visualization.
+              <br>
+              <strong>Example:</strong> Visualizing high-dimensional data in 2D.
+            </p>
+            <canvas id="somChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Deep Belief Networks (DBN) -->
+    <h2 class="section-title">Deep Belief Networks (DBN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DBN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A stack of Restricted Boltzmann Machines (RBMs) used for unsupervised learning.
+              <br>
+              <strong>Architecture:</strong> Multiple layers of RBMs.
+              <br>
+              <strong>Use Cases:</strong> Feature learning, classification.
+              <br>
+              <strong>Example:</strong> Handwritten digit recognition.
+            </p>
+            <canvas id="dbnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Echo State Networks (ESN) -->
+    <h2 class="section-title">Echo State Networks (ESN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">ESN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A type of recurrent neural network with a fixed, random hidden layer.
+              <br>
+              <strong>Architecture:</strong> Input → Reservoir (random hidden layer) → Output.
+              <br>
+              <strong>Use Cases:</strong> Time series prediction, speech recognition.
+              <br>
+              <strong>Example:</strong> Predicting chaotic systems.
+            </p>
+            <canvas id="esnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Capsule Networks (CapsNet) -->
+    <h2 class="section-title">Capsule Networks (CapsNet)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">CapsNet Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A neural network designed to capture spatial hierarchies in data.
+              <br>
+              <strong>Architecture:</strong> Capsules (groups of neurons) → Dynamic routing.
+              <br>
+              <strong>Use Cases:</strong> Image recognition, object detection.
+              <br>
+              <strong>Example:</strong> Recognizing objects from different viewpoints.
+            </p>
+            <canvas id="capsnetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Siamese Networks -->
+    <h2 class="section-title">Siamese Networks</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Siamese Networks Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A network architecture that uses two identical subnetworks to compare inputs.
+              <br>
+              <strong>Architecture:</strong> Twin networks → Distance metric.
+              <br>
+              <strong>Use Cases:</strong> Face recognition, signature verification.
+              <br>
+              <strong>Example:</strong> Verifying if two signatures are from the same person.
+            </p>
+            <canvas id="siameseChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Neural Turing Machines (NTM) -->
+    <h2 class="section-title">Neural Turing Machines (NTM)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">NTM Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A neural network augmented with external memory for complex tasks.
+              <br>
+              <strong>Architecture:</strong> Neural network + Memory matrix.
+              <br>
+              <strong>Use Cases:</strong> Algorithm learning, sequential data processing.
+              <br>
+              <strong>Example:</strong> Learning to copy sequences.
+            </p>
+            <canvas id="ntmChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Variational Autoencoders (VAE) -->
+    <h2 class="section-title">Variational Autoencoders (VAE)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">VAE Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A generative model that learns a probabilistic representation of data.
+              <br>
+              <strong>Architecture:</strong> Encoder → Latent space (with sampling) → Decoder.
+              <br>
+              <strong>Use Cases:</strong> Image generation, anomaly detection.
+              <br>
+              <strong>Example:</strong> Generating new faces.
+            </p>
+            <canvas id="vaeChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Graph Neural Networks (GNN) -->
+    <h2 class="section-title">Graph Neural Networks (GNN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GNN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A neural network designed to work with graph-structured data.
+              <br>
+              <strong>Architecture:</strong> Graph convolution layers → Pooling → Output.
+              <br>
+              <strong>Use Cases:</strong> Social network analysis, molecular property prediction.
+              <br>
+              <strong>Example:</strong> Predicting drug interactions.
+            </p>
+            <canvas id="gnnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Spatial Transformer Networks (STN) -->
+    <h2 class="section-title">Spatial Transformer Networks (STN)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">STN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A network module that applies spatial transformations to input data.
+              <br>
+              <strong>Architecture:</strong> Localization network → Grid generator → Sampler.
+              <br>
+              <strong>Use Cases:</strong> Image recognition, spatial invariance.
+              <br>
+              <strong>Example:</strong> Rotating and scaling images for better recognition.
+            </p>
+            <canvas id="stnChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Neural Ordinary Differential Equations (Neural ODEs) -->
+    <h2 class="section-title">Neural Ordinary Differential Equations (Neural ODEs)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Neural ODEs Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A model that uses ODE solvers to define continuous-depth networks.
+              <br>
+              <strong>Architecture:</strong> ODE solver → Continuous layers.
+              <br>
+              <strong>Use Cases:</strong> Time series modeling, generative modeling.
+              <br>
+              <strong>Example:</strong> Modeling physical systems.
+            </p>
+            <canvas id="neuralOdeChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: BERT (Bidirectional Encoder Representations from Transformers) -->
+    <h2 class="section-title">BERT (Bidirectional Encoder Representations from Transformers)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">BERT Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A transformer-based model for natural language processing.
+              <br>
+              <strong>Architecture:</strong> Transformer encoder → Fine-tuning.
+              <br>
+              <strong>Use Cases:</strong> Text classification, question answering.
+              <br>
+              <strong>Example:</strong> Google Search algorithms.
+            </p>
+            <canvas id="bertChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: EfficientNet -->
+    <h2 class="section-title">EfficientNet</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">EfficientNet Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A convolutional neural network optimized for efficiency and accuracy.
+              <br>
+              <strong>Architecture:</strong> Compound scaling of depth, width, and resolution.
+              <br>
+              <strong>Use Cases:</strong> Image classification, object detection.
+              <br>
+              <strong>Example:</strong> Mobile and edge device applications.
+            </p>
+            <canvas id="efficientnetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: DenseNet -->
+    <h2 class="section-title">DenseNet</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DenseNet Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A network where each layer is connected to every other layer in a feedforward fashion.
+              <br>
+              <strong>Architecture:</strong> Dense blocks → Transition layers.
+              <br>
+              <strong>Use Cases:</strong> Image classification, feature reuse.
+              <br>
+              <strong>Example:</strong> Medical image analysis.
+            </p>
+            <canvas id="densenetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: ResNeXt -->
+    <h2 class="section-title">ResNeXt</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">ResNeXt Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> An extension of ResNet with grouped convolutions.
+              <br>
+              <strong>Architecture:</strong> Residual blocks → Grouped convolutions.
+              <br>
+              <strong>Use Cases:</strong> Image recognition, object detection.
+              <br>
+              <strong>Example:</strong> Large-scale image classification.
+            </p>
+            <canvas id="resnextChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: MobileNet -->
+    <h2 class="section-title">MobileNet</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">MobileNet Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A lightweight CNN designed for mobile and embedded devices.
+              <br>
+              <strong>Architecture:</strong> Depthwise separable convolutions.
+              <br>
+              <strong>Use Cases:</strong> Mobile vision applications.
+              <br>
+              <strong>Example:</strong> Real-time object detection on smartphones.
+            </p>
+            <canvas id="mobilenetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: ShuffleNet -->
+    <h2 class="section-title">ShuffleNet</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">ShuffleNet Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A computationally efficient CNN using channel shuffling.
+              <br>
+              <strong>Architecture:</strong> Grouped convolutions → Channel shuffle.
+              <br>
+              <strong>Use Cases:</strong> Mobile and edge computing.
+              <br>
+              <strong>Example:</strong> Real-time image classification.
+            </p>
+            <canvas id="shufflenetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Transformer-XL -->
+    <h2 class="section-title">Transformer-XL</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Transformer-XL Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A transformer model designed for long-range dependencies.
+              <br>
+              <strong>Architecture:</strong> Segment-level recurrence + Relative positional encoding.
+              <br>
+              <strong>Use Cases:</strong> Language modeling, text generation.
+              <br>
+              <strong>Example:</strong> Generating long paragraphs of text.
+            </p>
+            <canvas id="transformerXlChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: T5 (Text-To-Text Transfer Transformer) -->
+    <h2 class="section-title">T5 (Text-To-Text Transfer Transformer)</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">T5 Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A transformer model that frames all NLP tasks as text-to-text problems.
+              <br>
+              <strong>Architecture:</strong> Encoder-decoder transformer.
+              <br>
+              <strong>Use Cases:</strong> Text summarization, translation.
+              <br>
+              <strong>Example:</strong> Google’s text-based AI tasks.
+            </p>
+            <canvas id="t5Chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: StyleGAN -->
+    <h2 class="section-title">StyleGAN</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">StyleGAN Overview</h5>
+            <p class="card-text">
+              <strong>Definition:</strong> A generative adversarial network for high-quality image synthesis.
+              <br>
+              <strong>Architecture:</strong> Style-based generator → Discriminator.
+              <br>
+              <strong>Use Cases:</strong> Image generation, art creation.
+              <br>
+              <strong>Example:</strong> Generating realistic human faces.
+            </p>
+            <canvas id="styleganChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Main Page -->
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <a href="../home.html" class="btn btn-primary">Back to Main Page</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Developed by <a href="#">Aditya</a> - Cybersecurity and AI Researcher</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Initialize Charts After DOM is Loaded -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeCharts();
+    });
+  </script>
+</body>
+</html>

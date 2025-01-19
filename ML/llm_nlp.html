@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM & NLP Cheat Sheet</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- MathJax for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Custom CSS -->
+  <link href="../static/style.css" rel="stylesheet">
+  <script src="../static/script.js"></script>
+</head>
+<body class="dark-mode">
+    <div class="dark-mode-toggle">
+        <button class="toggle-btn" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i> Toggle Theme
+        </button>
+    </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>LLM & NLP Cheat Sheet</h1>
+    <p>A comprehensive guide to Large Language Models (LLMs) and Natural Language Processing (NLP).</p>
+  </div>
+
+  <!-- Container -->
+  <div class="container my-5">
+    <!-- Cheat Sheet Topics -->
+    <h2 class="section-title">Cheat Sheet Topics</h2>
+    <div class="row">
+      <!-- Tokenization -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('tokenization')">
+          <div class="card-body">
+            <h5 class="card-title">Tokenization</h5>
+            <p class="card-text">Breaking text into smaller units (tokens).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Embeddings -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('embeddings')">
+          <div class="card-body">
+            <h5 class="card-title">Embeddings</h5>
+            <p class="card-text">Numerical representations of words or sentences.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Transformers -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('transformers')">
+          <div class="card-body">
+            <h5 class="card-title">Transformers</h5>
+            <p class="card-text">Neural networks with self-attention mechanisms.</p>
+          </div>
+        </div>
+      </div>
+      <!-- GPT -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('gpt')">
+          <div class="card-body">
+            <h5 class="card-title">GPT</h5>
+            <p class="card-text">Generative Pre-trained Transformer.</p>
+          </div>
+        </div>
+      </div>
+      <!-- BERT -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('bert')">
+          <div class="card-body">
+            <h5 class="card-title">BERT</h5>
+            <p class="card-text">Bidirectional Encoder Representations from Transformers.</p>
+          </div>
+        </div>
+      </div>
+      <!-- T5 -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('t5')">
+          <div class="card-body">
+            <h5 class="card-title">T5</h5>
+            <p class="card-text">Text-to-Text Transfer Transformer.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Attention Mechanism -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('attention')">
+          <div class="card-body">
+            <h5 class="card-title">Attention Mechanism</h5>
+            <p class="card-text">Self-Attention, Transformers.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sequence-to-Sequence Models -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('seq2seq')">
+          <div class="card-body">
+            <h5 class="card-title">Sequence-to-Sequence Models</h5>
+            <p class="card-text">Encoder-Decoder architectures.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Word2Vec -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('word2vec')">
+          <div class="card-body">
+            <h5 class="card-title">Word2Vec</h5>
+            <p class="card-text">Word embeddings using CBOW and Skip-Gram.</p>
+          </div>
+        </div>
+      </div>
+      <!-- GloVe -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('glove')">
+          <div class="card-body">
+            <h5 class="card-title">GloVe</h5>
+            <p class="card-text">Global Vectors for Word Representation.</p>
+          </div>
+        </div>
+      </div>
+      <!-- RNNs -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('rnns')">
+          <div class="card-body">
+            <h5 class="card-title">RNNs</h5>
+            <p class="card-text">Recurrent Neural Networks for sequential data.</p>
+          </div>
+        </div>
+      </div>
+      <!-- LSTMs -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('lstms')">
+          <div class="card-body">
+            <h5 class="card-title">LSTMs</h5>
+            <p class="card-text">Long Short-Term Memory networks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sentiment Analysis -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('sentiment')">
+          <div class="card-body">
+            <h5 class="card-title">Sentiment Analysis</h5>
+            <p class="card-text">Analyzing text sentiment (positive, negative, neutral).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Machine Translation -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('translation')">
+          <div class="card-body">
+            <h5 class="card-title">Machine Translation</h5>
+            <p class="card-text">Translating text from one language to another.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Text Summarization -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('summarization')">
+          <div class="card-body">
+            <h5 class="card-title">Text Summarization</h5>
+            <p class="card-text">Generating concise summaries of long texts.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Named Entity Recognition (NER) -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('ner')">
+          <div class="card-body">
+            <h5 class="card-title">Named Entity Recognition (NER)</h5>
+            <p class="card-text">Identifying entities in text (e.g., names, dates).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Question Answering -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('qa')">
+          <div class="card-body">
+            <h5 class="card-title">Question Answering</h5>
+            <p class="card-text">Answering questions based on context.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Text Generation -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('textgen')">
+          <div class="card-body">
+            <h5 class="card-title">Text Generation</h5>
+            <p class="card-text">Generating human-like text using LLMs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Chatbots -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('chatbots')">
+          <div class="card-body">
+            <h5 class="card-title">Chatbots</h5>
+            <p class="card-text">Building conversational AI systems.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Pre-training and Fine-tuning -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('pretraining')">
+          <div class="card-body">
+            <h5 class="card-title">Pre-training & Fine-tuning</h5>
+            <p class="card-text">Training LLMs on large datasets and adapting them to specific tasks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Transfer Learning -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('transfer')">
+          <div class="card-body">
+            <h5 class="card-title">Transfer Learning</h5>
+            <p class="card-text">Leveraging pre-trained models for new tasks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popups -->
+<div id="tokenization" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Tokenization</h2>
+    <p><strong>Definition:</strong> Tokenization is the process of breaking text into smaller units (tokens) such as words, subwords, or characters.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Word Tokenization:</strong> "Hello world" → ["Hello", "world"]</li>
+      <li><strong>Subword Tokenization:</strong> "unhappiness" → ["un", "happiness"]</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input raw text.</li>
+      <li>Split text into tokens using a tokenizer.</li>
+      <li>Process tokens for further NLP tasks.</li>
+    </ol>
+  </div>
+  
+  <div id="embeddings" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Embeddings</h2>
+    <p><strong>Definition:</strong> Embeddings are numerical representations of words or sentences in a continuous vector space.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Word2Vec:</strong> Represents words as vectors.</li>
+      <li><strong>BERT Embeddings:</strong> Contextual embeddings for words.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input tokens.</li>
+      <li>Convert tokens into embeddings using a pre-trained model.</li>
+      <li>Use embeddings for tasks like similarity analysis or classification.</li>
+    </ol>
+  </div>
+  
+  <div id="transformers" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Transformers</h2>
+    <p><strong>Definition:</strong> Transformers are neural network architectures that use self-attention mechanisms to process sequential data.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>BERT:</strong> Bidirectional transformer for understanding context.</li>
+      <li><strong>GPT:</strong> Autoregressive transformer for text generation.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input sequence of tokens.</li>
+      <li>Apply self-attention to capture context.</li>
+      <li>Generate output (e.g., text, classification).</li>
+    </ol>
+  </div>
+  
+  <div id="gpt" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>GPT (Generative Pre-trained Transformer)</h2>
+    <p><strong>Definition:</strong> GPT is an autoregressive LLM designed for text generation and understanding.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>GPT-3:</strong> Generates human-like text for chatbots and content creation.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a prompt.</li>
+      <li>Generate text token by token using the model.</li>
+      <li>Output the generated text.</li>
+    </ol>
+  </div>
+  
+  <div id="bert" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>BERT (Bidirectional Encoder Representations from Transformers)</h2>
+    <p><strong>Definition:</strong> BERT is a transformer-based model designed for bidirectional context understanding.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Question Answering:</strong> Extracts answers from a given context.</li>
+      <li><strong>Sentiment Analysis:</strong> Determines the sentiment of a text.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a sequence of tokens.</li>
+      <li>Apply bidirectional attention to understand context.</li>
+      <li>Output predictions (e.g., answers, sentiment).</li>
+    </ol>
+  </div>
+  
+  <div id="t5" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>T5 (Text-to-Text Transfer Transformer)</h2>
+    <p><strong>Definition:</strong> T5 treats every NLP task as a text-to-text problem.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Translation:</strong> Converts text from one language to another.</li>
+      <li><strong>Summarization:</strong> Generates concise summaries of long texts.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input text for a specific task (e.g., translation).</li>
+      <li>Process text using the T5 model.</li>
+      <li>Output the transformed text.</li>
+    </ol>
+  </div>
+  
+  <div id="attention" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Attention Mechanism</h2>
+    <p><strong>Definition:</strong> Attention mechanisms allow models to focus on specific parts of the input sequence when making predictions.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Self-Attention:</strong> Computes attention scores for input sequences.</li>
+      <li><strong>Multi-Head Attention:</strong> Uses multiple attention heads to capture different aspects of the input.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input sequence of tokens.</li>
+      <li>Compute attention scores for each token.</li>
+      <li>Generate weighted representations of the input.</li>
+    </ol>
+  </div>
+  
+  <div id="seq2seq" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Sequence-to-Sequence Models</h2>
+    <p><strong>Definition:</strong> Sequence-to-sequence (Seq2Seq) models are used for tasks where the input and output are sequences, such as machine translation.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Encoder-Decoder Architecture:</strong> Encodes the input sequence into a fixed-size context vector, which is then decoded into the output sequence.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input sequence of tokens.</li>
+      <li>Encode the sequence into a context vector.</li>
+      <li>Decode the context vector into the output sequence.</li>
+    </ol>
+  </div>
+  
+  <div id="word2vec" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Word2Vec</h2>
+    <p><strong>Definition:</strong> Word2Vec is a technique for learning word embeddings by predicting surrounding words in a sentence.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>CBOW (Continuous Bag of Words):</strong> Predicts a target word based on its context.</li>
+      <li><strong>Skip-Gram:</strong> Predicts context words given a target word.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a corpus of text.</li>
+      <li>Train the Word2Vec model to learn word embeddings.</li>
+      <li>Use embeddings for tasks like word similarity or classification.</li>
+    </ol>
+  </div>
+  
+  <div id="glove" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>GloVe (Global Vectors for Word Representation)</h2>
+    <p><strong>Definition:</strong> GloVe learns word embeddings by factorizing a word co-occurrence matrix.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Co-occurrence Matrix:</strong> Captures how often words appear together in a corpus.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a corpus of text.</li>
+      <li>Construct a word co-occurrence matrix.</li>
+      <li>Factorize the matrix to learn word embeddings.</li>
+    </ol>
+  </div>
+  
+  <div id="rnns" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Recurrent Neural Networks (RNNs)</h2>
+    <p><strong>Definition:</strong> RNNs are designed to handle sequential data by maintaining a hidden state that captures information from previous time steps.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Vanilla RNN:</strong> Processes sequences step-by-step.</li>
+      <li><strong>GRU (Gated Recurrent Unit):</strong> Improves upon vanilla RNNs with gating mechanisms.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input sequence of tokens.</li>
+      <li>Update hidden state at each time step.</li>
+      <li>Generate output based on the final hidden state.</li>
+    </ol>
+  </div>
+  
+  <div id="lstms" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Long Short-Term Memory (LSTM)</h2>
+    <p><strong>Definition:</strong> LSTMs are a type of RNN that use gating mechanisms to control the flow of information and solve the vanishing gradient problem.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Forget Gate:</strong> Decides what information to discard from the cell state.</li>
+      <li><strong>Input Gate:</strong> Decides what new information to store in the cell state.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input sequence of tokens.</li>
+      <li>Update cell state and hidden state using gates.</li>
+      <li>Generate output based on the final hidden state.</li>
+    </ol>
+  </div>
+  
+  <div id="sentiment" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Sentiment Analysis</h2>
+    <p><strong>Definition:</strong> Sentiment analysis determines the sentiment (positive, negative, or neutral) of a text.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Binary Classification:</strong> Classifies text as positive or negative.</li>
+      <li><strong>Multi-Class Classification:</strong> Classifies text into multiple sentiment categories.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input text.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to predict sentiment.</li>
+    </ol>
+  </div>
+  
+  <div id="translation" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Machine Translation</h2>
+    <p><strong>Definition:</strong> Machine translation converts text from one language to another.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Neural Machine Translation (NMT):</strong> Uses Seq2Seq models with attention.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input text in the source language.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to generate translated text.</li>
+    </ol>
+  </div>
+  
+  <div id="summarization" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Text Summarization</h2>
+    <p><strong>Definition:</strong> Text summarization generates concise summaries of long texts.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Extractive Summarization:</strong> Selects important sentences from the text.</li>
+      <li><strong>Abstractive Summarization:</strong> Generates new sentences to summarize the text.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input long text.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to generate a summary.</li>
+    </ol>
+  </div>
+  
+  <div id="ner" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Named Entity Recognition (NER)</h2>
+    <p><strong>Definition:</strong> NER identifies entities in text (e.g., names, dates, locations).</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Entity Types:</strong> Person, Organization, Location, Date, etc.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input text.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to identify entities.</li>
+    </ol>
+  </div>
+  
+  <div id="qa" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Question Answering</h2>
+    <p><strong>Definition:</strong> Question answering systems answer questions based on a given context.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Extractive QA:</strong> Extracts answers directly from the context.</li>
+      <li><strong>Generative QA:</strong> Generates answers based on the context.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a question and context.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to generate an answer.</li>
+    </ol>
+  </div>
+  
+  <div id="textgen" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Text Generation</h2>
+    <p><strong>Definition:</strong> Text generation models generate human-like text based on a prompt.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>GPT-3:</strong> Generates text for chatbots, content creation, etc.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input a prompt.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to generate text.</li>
+    </ol>
+  </div>
+  
+  <div id="chatbots" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Chatbots</h2>
+    <p><strong>Definition:</strong> Chatbots are conversational AI systems that interact with users in natural language.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Rule-Based Chatbots:</strong> Follow predefined rules.</li>
+      <li><strong>AI-Powered Chatbots:</strong> Use NLP models like GPT for dynamic responses.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input user query.</li>
+      <li>Tokenize and preprocess the text.</li>
+      <li>Use a trained model to generate a response.</li>
+    </ol>
+  </div>
+  
+  <div id="pretraining" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Pre-training & Fine-tuning</h2>
+    <p><strong>Definition:</strong> Pre-training involves training a model on a large dataset, while fine-tuning adapts the model to a specific task.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>BERT:</strong> Pre-trained on large text corpora, fine-tuned for tasks like QA or NER.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Pre-train a model on a large dataset.</li>
+      <li>Fine-tune the model on a task-specific dataset.</li>
+      <li>Evaluate and deploy the model.</li>
+    </ol>
+  </div>
+  
+  <div id="transfer" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Transfer Learning</h2>
+    <p><strong>Definition:</strong> Transfer learning leverages pre-trained models for new tasks, reducing the need for large datasets.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Fine-Tuning:</strong> Adapting a pre-trained model to a new task.</li>
+      <li><strong>Feature Extraction:</strong> Using pre-trained embeddings as input features.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Load a pre-trained model.</li>
+      <li>Adapt the model to the new task.</li>
+      <li>Train and evaluate the model.</li>
+    </ol>
+  </div>
+
+  <!-- Back to Main Page -->
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <a href="../home.html" class="btn btn-primary">Back to Main Page</a>
+    </div>
+  </div>
+</div>
+
+  <!-- Add more popups for other topics as needed -->
+
+  <!-- Overlay -->
+  <div class="overlay" onclick="closePopup()"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Created by <a href="#">Aditya Pandey</a> | &copy; 2025</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

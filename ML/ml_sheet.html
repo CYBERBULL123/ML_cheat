@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Top Algorithm Cheat Sheet</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../static/style.css" rel="stylesheet">
+  <script src="../static/script.js"></script>
+</head>
+<body>
+  <body class="dark-mode">
+    <div class="dark-mode-toggle">
+      <button class="toggle-btn" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i> Toggle Theme
+      </button>
+    </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>ML Algorithms Cheat Sheet</h1>
+    <p>A futuristic guide to top algorithms and models in ML and Deep Learning.</p>
+  </div>
+
+  <!-- Container -->
+  <div class="container my-5">
+
+    <!-- Supervised Learning -->
+    <h2 class="section-title">Supervised Learning</h2>
+    <div class="row">
+      <!-- Linear Regression -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Linear Regression</h5>
+            <p class="card-text"><strong>Definition:</strong> Predicts continuous values by fitting a linear relationship between input and output.</p>
+            <p class="card-text"><strong>Workflow:</strong> Minimizes the sum of squared errors to find the best-fit line.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Assumes a linear relationship between independent and dependent variables.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Logistic Regression -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Logistic Regression</h5>
+            <p class="card-text"><strong>Definition:</strong> Used for binary or multi-class classification by estimating probabilities.</p>
+            <p class="card-text"><strong>Workflow:</strong> Applies a sigmoid function to map predictions to probabilities.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Uses maximum likelihood estimation to optimize parameters.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Decision Trees -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Decision Trees</h5>
+            <p class="card-text"><strong>Definition:</strong> Splits data into branches to make decisions based on feature values.</p>
+            <p class="card-text"><strong>Workflow:</strong> Recursively partitions data to maximize information gain.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Prone to overfitting; often used in ensembles like Random Forest.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Random Forest -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Random Forest</h5>
+            <p class="card-text"><strong>Definition:</strong> Ensemble of decision trees for high accuracy and reduced overfitting.</p>
+            <p class="card-text"><strong>Workflow:</strong> Builds multiple trees and averages their predictions.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Uses bagging (bootstrap aggregating) to improve performance.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SVM -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SVM</h5>
+            <p class="card-text"><strong>Definition:</strong> Finds the optimal hyperplane to separate classes in high-dimensional space.</p>
+            <p class="card-text"><strong>Workflow:</strong> Maximizes the margin between classes using support vectors.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Can use kernel functions for non-linear classification.</p>
+          </div>
+        </div>
+      </div>
+      <!-- k-NN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">k-NN</h5>
+            <p class="card-text"><strong>Definition:</strong> Classifies data points based on the majority class of their nearest neighbors.</p>
+            <p class="card-text"><strong>Workflow:</strong> Computes distances (e.g., Euclidean) to find the k-nearest neighbors.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Lazy learner; no training phase, but computationally expensive during prediction.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Gradient Boosting -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Gradient Boosting</h5>
+            <p class="card-text"><strong>Definition:</strong> Builds models sequentially to correct errors from previous models.</p>
+            <p class="card-text"><strong>Workflow:</strong> Fits new models to the residuals of previous models.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Uses gradient descent to minimize loss functions.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Naive Bayes -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Naive Bayes</h5>
+            <p class="card-text"><strong>Definition:</strong> Probabilistic classifier based on Bayes' theorem, ideal for text data.</p>
+            <p class="card-text"><strong>Workflow:</strong> Calculates posterior probabilities using prior and likelihood.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Assumes independence between features (naive assumption).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Neural Networks -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Neural Networks</h5>
+            <p class="card-text"><strong>Definition:</strong> General-purpose model for classification and regression tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses layers of neurons to learn complex patterns.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Backpropagation adjusts weights to minimize error.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Ensemble Methods -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Ensemble Methods</h5>
+            <p class="card-text"><strong>Definition:</strong> Combines multiple models to improve performance and robustness.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses techniques like bagging, boosting, and stacking.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Reduces variance and bias by leveraging diverse models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unsupervised Learning -->
+    <h2 class="section-title">Unsupervised Learning</h2>
+    <div class="row">
+      <!-- k-Means Clustering -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">k-Means Clustering</h5>
+            <p class="card-text"><strong>Definition:</strong> Partitions data into k clusters based on similarity.</p>
+            <p class="card-text"><strong>Workflow:</strong> Iteratively assigns data points to the nearest centroid and updates centroids.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Sensitive to initial centroid placement; requires predefined k.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Hierarchical Clustering -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Hierarchical Clustering</h5>
+            <p class="card-text"><strong>Definition:</strong> Builds a hierarchy of clusters using dendrograms.</p>
+            <p class="card-text"><strong>Workflow:</strong> Agglomerative (bottom-up) or divisive (top-down) approaches.</p>
+            <p class="card-text"><strong>Key Concept:</strong> No need to specify k; results in a tree-like structure.</p>
+          </div>
+        </div>
+      </div>
+      <!-- DBSCAN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DBSCAN</h5>
+            <p class="card-text"><strong>Definition:</strong> Density-based clustering for identifying outliers.</p>
+            <p class="card-text"><strong>Workflow:</strong> Groups dense regions of data points and marks outliers as noise.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Does not require predefined k; handles noise well.</p>
+          </div>
+        </div>
+      </div>
+      <!-- PCA -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">PCA</h5>
+            <p class="card-text"><strong>Definition:</strong> Reduces dimensionality while preserving variance in data.</p>
+            <p class="card-text"><strong>Workflow:</strong> Projects data onto orthogonal axes with maximum variance.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Eigenvalues and eigenvectors determine principal components.</p>
+          </div>
+        </div>
+      </div>
+      <!-- t-SNE -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">t-SNE</h5>
+            <p class="card-text"><strong>Definition:</strong> Visualizes high-dimensional data in 2D or 3D.</p>
+            <p class="card-text"><strong>Workflow:</strong> Minimizes divergence between high-dimensional and low-dimensional distributions.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Focuses on preserving local relationships between data points.</p>
+          </div>
+        </div>
+      </div>
+      <!-- GMM -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GMM</h5>
+            <p class="card-text"><strong>Definition:</strong> Probabilistic model for clustering using Gaussian distributions.</p>
+            <p class="card-text"><strong>Workflow:</strong> Fits multiple Gaussian distributions to the data.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Soft clustering; assigns probabilities to cluster membership.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Apriori Algorithm -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Apriori Algorithm</h5>
+            <p class="card-text"><strong>Definition:</strong> Finds frequent itemsets for association rule mining.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses a breadth-first search to identify frequent itemsets.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Based on the "apriori principle" (subsets of frequent itemsets are also frequent).</p>
+          </div>
+        </div>
+      </div>
+      <!-- ICA -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">ICA</h5>
+            <p class="card-text"><strong>Definition:</strong> Separates mixed signals into independent components.</p>
+            <p class="card-text"><strong>Workflow:</strong> Maximizes statistical independence between components.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Used in blind source separation and signal processing.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Autoencoders -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Autoencoders</h5>
+            <p class="card-text"><strong>Definition:</strong> Neural networks for dimensionality reduction and feature learning.</p>
+            <p class="card-text"><strong>Workflow:</strong> Encodes input data into a lower-dimensional representation and decodes it back.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Can be used for anomaly detection and generative tasks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SOM -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SOM</h5>
+            <p class="card-text"><strong>Definition:</strong> Creates a low-dimensional representation of data for visualization.</p>
+            <p class="card-text"><strong>Workflow:</strong> Maps high-dimensional data to a 2D grid using competitive learning.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Preserves topological properties of the input data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reinforcement Learning -->
+    <h2 class="section-title">Reinforcement Learning</h2>
+    <div class="row">
+      <!-- Q-Learning -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Q-Learning</h5>
+            <p class="card-text"><strong>Definition:</strong> Learns optimal policies for Markov Decision Processes.</p>
+            <p class="card-text"><strong>Workflow:</strong> Updates Q-values using the Bellman equation.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Model-free; learns directly from interactions with the environment.</p>
+          </div>
+        </div>
+      </div>
+      <!-- DQN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DQN</h5>
+            <p class="card-text"><strong>Definition:</strong> Combines Q-Learning with deep neural networks for complex tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses experience replay and target networks for stability.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Handles high-dimensional state spaces (e.g., images).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Policy Gradient Methods -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Policy Gradient Methods</h5>
+            <p class="card-text"><strong>Definition:</strong> Optimizes policies directly using gradient ascent.</p>
+            <p class="card-text"><strong>Workflow:</strong> Adjusts policy parameters to maximize expected rewards.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Can handle continuous action spaces.</p>
+          </div>
+        </div>
+      </div>
+      <!-- PPO -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">PPO</h5>
+            <p class="card-text"><strong>Definition:</strong> Ensures stable and efficient policy updates.</p>
+            <p class="card-text"><strong>Workflow:</strong> Clips policy updates to avoid large deviations.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Balances exploration and exploitation effectively.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Monte Carlo Methods -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Monte Carlo Methods</h5>
+            <p class="card-text"><strong>Definition:</strong> Learns from complete episodes of interaction.</p>
+            <p class="card-text"><strong>Workflow:</strong> Updates value estimates based on total rewards from episodes.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Requires episodic tasks; high variance but unbiased.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SARSA -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SARSA</h5>
+            <p class="card-text"><strong>Definition:</strong> On-policy algorithm for learning action-value functions.</p>
+            <p class="card-text"><strong>Workflow:</strong> Updates Q-values based on the current policy.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Learns the value of the policy being followed.</p>
+          </div>
+        </div>
+      </div>
+      <!-- DDPG -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DDPG</h5>
+            <p class="card-text"><strong>Definition:</strong> Handles continuous action spaces using actor-critic architecture.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses separate networks for policy (actor) and value function (critic).</p>
+            <p class="card-text"><strong>Key Concept:</strong> Combines the benefits of policy gradients and Q-learning.</p>
+          </div>
+        </div>
+      </div>
+      <!-- A3C -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">A3C</h5>
+            <p class="card-text"><strong>Definition:</strong> Asynchronous RL for parallel training of agents.</p>
+            <p class="card-text"><strong>Workflow:</strong> Multiple agents explore the environment and update a global model.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Speeds up learning by leveraging parallel computation.</p>
+          </div>
+        </div>
+      </div>
+      <!-- TRPO -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">TRPO</h5>
+            <p class="card-text"><strong>Definition:</strong> Ensures stable policy updates using trust regions.</p>
+            <p class="card-text"><strong>Workflow:</strong> Constrains policy updates to prevent large deviations.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Provides monotonic improvement in policy performance.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SAC -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SAC</h5>
+            <p class="card-text"><strong>Definition:</strong> Maximizes both rewards and policy entropy for efficient learning.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses entropy regularization to encourage exploration.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Balances exploration and exploitation effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Learning -->
+    <h2 class="section-title">Deep Learning</h2>
+    <div class="row">
+      <!-- CNN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">CNN</h5>
+            <p class="card-text"><strong>Definition:</strong> Specialized for image recognition and processing.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses convolutional layers to extract features and pooling layers for downsampling.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Captures spatial hierarchies in images.</p>
+          </div>
+        </div>
+      </div>
+      <!-- RNN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">RNN</h5>
+            <p class="card-text"><strong>Definition:</strong> Handles sequential data like time series and text.</p>
+            <p class="card-text"><strong>Workflow:</strong> Processes sequences step-by-step, maintaining a hidden state.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Struggles with long-term dependencies; improved by LSTM/GRU.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Transformers -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Transformers</h5>
+            <p class="card-text"><strong>Definition:</strong> State-of-the-art for NLP and image tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses self-attention mechanisms to process input sequences in parallel.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Eliminates the need for recurrence; highly scalable.</p>
+          </div>
+        </div>
+      </div>
+      <!-- GAN -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">GAN</h5>
+            <p class="card-text"><strong>Definition:</strong> Generates realistic data by pitting two networks against each other.</p>
+            <p class="card-text"><strong>Workflow:</strong> Generator creates fake data; discriminator distinguishes real from fake.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Adversarial training leads to high-quality outputs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Autoencoders -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Autoencoders</h5>
+            <p class="card-text"><strong>Definition:</strong> Used for dimensionality reduction and generative tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Encodes input data into a lower-dimensional representation and decodes it back.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Can be used for anomaly detection and feature learning.</p>
+          </div>
+        </div>
+      </div>
+      <!-- U-Net -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">U-Net</h5>
+            <p class="card-text"><strong>Definition:</strong> Designed for image segmentation tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Combines a contracting path (encoder) with an expansive path (decoder).</p>
+            <p class="card-text"><strong>Key Concept:</strong> Skip connections preserve spatial information.</p>
+          </div>
+        </div>
+      </div>
+      <!-- YOLO -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">YOLO</h5>
+            <p class="card-text"><strong>Definition:</strong> Real-time object detection system.</p>
+            <p class="card-text"><strong>Workflow:</strong> Divides the image into a grid and predicts bounding boxes and class probabilities.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Single forward pass for detection; highly efficient.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Siamese Networks -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Siamese Networks</h5>
+            <p class="card-text"><strong>Definition:</strong> Used for similarity learning tasks like face recognition.</p>
+            <p class="card-text"><strong>Workflow:</strong> Compares two inputs using shared weights and computes a similarity score.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Effective for one-shot learning.</p>
+          </div>
+        </div>
+      </div>
+      <!-- NTM -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">NTM</h5>
+            <p class="card-text"><strong>Definition:</strong> Neural networks with external memory for complex tasks.</p>
+            <p class="card-text"><strong>Workflow:</strong> Reads from and writes to an external memory matrix.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Mimics the working memory of the human brain.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Capsule Networks -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Capsule Networks</h5>
+            <p class="card-text"><strong>Definition:</strong> Improves image recognition by capturing spatial hierarchies.</p>
+            <p class="card-text"><strong>Workflow:</strong> Uses capsules to represent entities and their spatial relationships.</p>
+            <p class="card-text"><strong>Key Concept:</strong> Addresses limitations of CNNs in capturing spatial information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- Back to Main Page -->
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <a href="../home.html" class="btn btn-primary">Back to Main Page</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Developed by <a href="#">Aditya</a> - Cybersecurity and AI Researcher</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
