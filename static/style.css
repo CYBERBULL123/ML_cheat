@@ -240,7 +240,7 @@ body.light-mode .popup, .h2 {
   border-radius: 15px;
   z-index: 1000;
   max-width: 90%;
-  width: 600px;
+  width: 800px;
   padding: 20px;
   animation: popup-fade 0.5s ease;
 }
