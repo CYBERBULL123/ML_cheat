@@ -125,6 +125,15 @@
           </div>
         </div>
       </div>
+      <!-- FastText -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('fasttext')">
+          <div class="card-body">
+            <h5 class="card-title">FastText</h5>
+            <p class="card-text">Word embeddings with subword information.</p>
+          </div>
+        </div>
+      </div>
       <!-- RNNs -->
       <div class="col-md-4">
         <div class="card" onclick="openPopup('rnns')">
@@ -140,6 +149,15 @@
           <div class="card-body">
             <h5 class="card-title">LSTMs</h5>
             <p class="card-text">Long Short-Term Memory networks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- GRUs -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('grus')">
+          <div class="card-body">
+            <h5 class="card-title">GRUs</h5>
+            <p class="card-text">Gated Recurrent Units.</p>
           </div>
         </div>
       </div>
@@ -224,24 +242,126 @@
           </div>
         </div>
       </div>
+      <!-- Prompt Engineering -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('prompt')">
+          <div class="card-body">
+            <h5 class="card-title">Prompt Engineering</h5>
+            <p class="card-text">Designing effective prompts for LLMs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Few-Shot Learning -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('fewshot')">
+          <div class="card-body">
+            <h5 class="card-title">Few-Shot Learning</h5>
+            <p class="card-text">Training models with minimal examples.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Zero-Shot Learning -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('zeroshot')">
+          <div class="card-body">
+            <h5 class="card-title">Zero-Shot Learning</h5>
+            <p class="card-text">Performing tasks without explicit training.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Reinforcement Learning with Human Feedback (RLHF) -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('rlhf')">
+          <div class="card-body">
+            <h5 class="card-title">RLHF</h5>
+            <p class="card-text">Improving LLMs using human feedback.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Model Compression -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('compression')">
+          <div class="card-body">
+            <h5 class="card-title">Model Compression</h5>
+            <p class="card-text">Reducing model size (e.g., pruning, quantization).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Multimodal Models -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('multimodal')">
+          <div class="card-body">
+            <h5 class="card-title">Multimodal Models</h5>
+            <p class="card-text">Models that process text, images, and more.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Retrieval-Augmented Generation (RAG) -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('rag')">
+          <div class="card-body">
+            <h5 class="card-title">RAG</h5>
+            <p class="card-text">Combining retrieval and generation for better answers.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Chain-of-Thought Prompting -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('cot')">
+          <div class="card-body">
+            <h5 class="card-title">Chain-of-Thought</h5>
+            <p class="card-text">Encouraging step-by-step reasoning in LLMs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Bias and Fairness -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('bias')">
+          <div class="card-body">
+            <h5 class="card-title">Bias and Fairness</h5>
+            <p class="card-text">Addressing biases in LLMs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Hallucination Mitigation -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('hallucination')">
+          <div class="card-body">
+            <h5 class="card-title">Hallucination Mitigation</h5>
+            <p class="card-text">Reducing incorrect or fabricated outputs.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Model Evaluation -->
+      <div class="col-md-4">
+        <div class="card" onclick="openPopup('evaluation')">
+          <div class="card-body">
+            <h5 class="card-title">Model Evaluation</h5>
+            <p class="card-text">Metrics for evaluating LLMs (e.g., BLEU, ROUGE).</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Popups -->
-<div id="tokenization" class="popup">
+  <div id="tokenization" class="popup">
     <span class="close" onclick="closePopup()">&times;</span>
     <h2>Tokenization</h2>
-    <p><strong>Definition:</strong> Tokenization is the process of breaking text into smaller units (tokens) such as words, subwords, or characters.</p>
-    <p><strong>Examples:</strong></p>
+    <p><strong>Tokenization:</strong> Breaking text into smaller units (tokens) like words, subwords, or characters.</p>
+  
+    <p><strong>Types:</strong></p>
     <ul>
-      <li><strong>Word Tokenization:</strong> "Hello world" → ["Hello", "world"]</li>
-      <li><strong>Subword Tokenization:</strong> "unhappiness" → ["un", "happiness"]</li>
+      <li><strong>Word:</strong> "Hello world" → ["Hello", "world"]</li>
+      <li><strong>Subword:</strong> "unhappiness" → ["un", "happiness"]</li>
+      <li><strong>Character:</strong> "NLP" → ["N", "L", "P"]</li>
     </ul>
+  
     <p><strong>Workflow:</strong></p>
     <ol>
       <li>Input raw text.</li>
-      <li>Split text into tokens using a tokenizer.</li>
-      <li>Process tokens for further NLP tasks.</li>
+      <li>Split into tokens using a tokenizer.</li>
+      <li>Process tokens for NLP tasks.</li>
     </ol>
   </div>
   
@@ -575,6 +695,193 @@
       <li>Load a pre-trained model.</li>
       <li>Adapt the model to the new task.</li>
       <li>Train and evaluate the model.</li>
+    </ol>
+  </div>
+
+  <div id="prompt" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Prompt Engineering</h2>
+    <p><strong>Definition:</strong> Designing effective prompts to guide LLMs in generating desired outputs.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Instructional Prompts:</strong> "Translate this text to French."</li>
+      <li><strong>Few-Shot Prompts:</strong> Providing examples to guide the model.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Define the task.</li>
+      <li>Design a clear and specific prompt.</li>
+      <li>Test and refine the prompt.</li>
+    </ol>
+  </div>
+
+  <div id="fewshot" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Few-Shot Learning</h2>
+    <p><strong>Definition:</strong> Training models with minimal examples by leveraging pre-trained knowledge.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Text Classification:</strong> Classifying text with only a few labeled examples.</li>
+      <li><strong>Question Answering:</strong> Answering questions with limited context.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Provide a few examples.</li>
+      <li>Fine-tune the model or use prompt engineering.</li>
+      <li>Evaluate performance.</li>
+    </ol>
+  </div>
+
+  <div id="zeroshot" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Zero-Shot Learning</h2>
+    <p><strong>Definition:</strong> Performing tasks without explicit training by leveraging pre-trained models.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Text Classification:</strong> Classifying text into unseen categories.</li>
+      <li><strong>Translation:</strong> Translating text between languages not seen during training.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Define the task.</li>
+      <li>Use a pre-trained model with task-specific prompts.</li>
+      <li>Evaluate the output.</li>
+    </ol>
+  </div>
+
+  <div id="rlhf" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Reinforcement Learning with Human Feedback (RLHF)</h2>
+    <p><strong>Definition:</strong> Improving LLMs using feedback from humans to align outputs with desired behavior.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Chatbot Training:</strong> Refining responses based on user feedback.</li>
+      <li><strong>Content Moderation:</strong> Filtering harmful content using human-labeled data.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Collect human feedback on model outputs.</li>
+      <li>Train a reward model using feedback.</li>
+      <li>Fine-tune the LLM using the reward model.</li>
+    </ol>
+  </div>
+
+  <div id="compression" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Model Compression</h2>
+    <p><strong>Definition:</strong> Reducing the size of models for efficient deployment.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Pruning:</strong> Removing less important weights.</li>
+      <li><strong>Quantization:</strong> Reducing precision of weights (e.g., FP32 to INT8).</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Identify redundant parameters.</li>
+      <li>Apply compression techniques.</li>
+      <li>Evaluate performance and fine-tune.</li>
+    </ol>
+  </div>
+
+  <div id="multimodal" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Multimodal Models</h2>
+    <p><strong>Definition:</strong> Models that process multiple modalities (e.g., text, images, audio).</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>CLIP:</strong> Connects text and images.</li>
+      <li><strong>Flamingo:</strong> Processes text and images for visual question answering.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Input multiple modalities (e.g., text and image).</li>
+      <li>Process using a multimodal architecture.</li>
+      <li>Generate combined outputs.</li>
+    </ol>
+  </div>
+
+  <div id="rag" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Retrieval-Augmented Generation (RAG)</h2>
+    <p><strong>Definition:</strong> Combining retrieval and generation for better answers.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Question Answering:</strong> Retrieving relevant documents and generating answers.</li>
+      <li><strong>Chatbots:</strong> Enhancing responses with external knowledge.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Retrieve relevant documents.</li>
+      <li>Generate answers using the retrieved context.</li>
+      <li>Evaluate and refine.</li>
+    </ol>
+  </div>
+
+  <div id="cot" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Chain-of-Thought Prompting</h2>
+    <p><strong>Definition:</strong> Encouraging step-by-step reasoning in LLMs for complex tasks.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Math Problems:</strong> Breaking down problems into steps.</li>
+      <li><strong>Logical Reasoning:</strong> Solving puzzles with intermediate reasoning.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Provide a problem.</li>
+      <li>Prompt the model to think step-by-step.</li>
+      <li>Evaluate the reasoning process.</li>
+    </ol>
+  </div>
+
+  <div id="bias" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Bias and Fairness</h2>
+    <p><strong>Definition:</strong> Addressing biases in LLMs to ensure fair and ethical outputs.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Gender Bias:</strong> Mitigating biased language in text generation.</li>
+      <li><strong>Racial Bias:</strong> Ensuring fair treatment across demographics.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Identify biases in model outputs.</li>
+      <li>Apply debiasing techniques.</li>
+      <li>Evaluate fairness metrics.</li>
+    </ol>
+  </div>
+
+  <div id="hallucination" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Hallucination Mitigation</h2>
+    <p><strong>Definition:</strong> Reducing incorrect or fabricated outputs in LLMs.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>Fact-Checking:</strong> Verifying generated facts against trusted sources.</li>
+      <li><strong>Contextual Anchoring:</strong> Grounding outputs in provided context.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Identify hallucinated outputs.</li>
+      <li>Implement mitigation strategies (e.g., retrieval, constraints).</li>
+      <li>Evaluate and refine.</li>
+    </ol>
+  </div>
+
+  <div id="evaluation" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Model Evaluation</h2>
+    <p><strong>Definition:</strong> Assessing the performance of LLMs using metrics and benchmarks.</p>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li><strong>BLEU:</strong> Evaluating machine translation quality.</li>
+      <li><strong>ROUGE:</strong> Measuring text summarization performance.</li>
+    </ul>
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li>Define evaluation metrics.</li>
+      <li>Run the model on test data.</li>
+      <li>Analyze and interpret results.</li>
     </ol>
   </div>
 

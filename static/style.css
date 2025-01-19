@@ -334,6 +334,12 @@ body.light-mode .popup h2 {
   .popup p {
     font-size: clamp(0.8rem, 2vw, 0.9rem); /* Smaller font size for mobile */
   }
+  .popup ul {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+  .popup ol {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -360,14 +366,20 @@ body.light-mode .popup h2 {
     font-size: clamp(1rem, 3vw, 1.2rem); /* Even smaller font size for small devices */
   }
   .popup p {
-    font-size: clamp(0.7rem, 1.8vw, 0.8rem); /* Even smaller font size for small devices */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Even smaller font size for small devices */
+  }
+  .popup ul {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+  .popup ol {
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 }
 
 /* Larger Screens Popup Adjustments */
 @media (min-width: 1200px) {
   .popup {
-    width: 1000px; /* Larger popup for bigger screens */
+    width: 800px; /* Larger popup for bigger screens */
     padding: 10px;
   }
   .popup h2 {
@@ -375,5 +387,11 @@ body.light-mode .popup h2 {
   }
   .popup p {
     font-size: clamp(1rem, 1.5vw, 1rem); /* Larger font size for bigger screens */
+  }
+  .popup ul {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+  .popup ol {
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 }
